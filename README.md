@@ -1,3 +1,4 @@
+# draw-numbers
 There are mainly two parts in the assignment:
 
 **1.Modeling:** Model the geometry of 2-digit numbers.
@@ -15,3 +16,7 @@ There are mainly two parts in the assignment:
 - Scale: Scale the size of the digits according to the slider values.
 - Rotation: Rotate the digits in z axis according to the slider values.
 - Be  careful  about  the  order  of  transformations. Rotation  and  scale  should  be  local  (about  the center of the digits).Theyshould not change the position.
+
+## Screenshot
+
+![screenshot](https://github.com/cvngur/draw-numbers/blob/master/screenshot.png)
