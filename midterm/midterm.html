@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Programming Assignment 2</title>
+
+	<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+uniform mat4 transformationMatrix;
+
+void
+main()
+{
+	gl_Position = transformationMatrix*vPosition;
+    gl_Position.z = 0.0;
+    gl_Position.w = 1.0;
+}
+</script>
+
+	<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+uniform vec4 color;
+void
+main()
+{
+    gl_FragColor = color;
+}
+</script>
+
+	<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+	<script type="text/javascript" src="../Common/initShaders.js"></script>
+	<script type="text/javascript" src="../Common/MV.js"></script>
+	<script type="text/javascript" src="midterm.js"></script>
+</head>
+
+<body style="background-color:powderblue;">
+
+	<div>
+		Can Gür
+	</div>
+	<table>
+		<tr>
+			<td>
+				<canvas id="gl-canvas" width="512" height="512">
+					Oops ... your browser doesn't support the HTML5 canvas element
+				</canvas>
+			</td>
+			<td>
+				<div>Number</div>
+				<div><input id="inp_number" type="number" min="0" max="99" maxlength="2" value=16></div>
+
+				<div> <strong>---- Color ----</strong> </div><br>
+				<div>
+					R: 0<input id="redSlider" type="range" min="0" max="1" step="0.05" value="1" />1
+				</div>
+				<div>
+					G: 0<input id="greenSlider" type="range" min="0" max="1" step="0.05" value="0" />1
+				</div>
+				<div>
+					B: 0<input id="blueSlider" type="range" min="0" max="1" step="0.05" value="0" />1
+				</div>
+				<br>
+
+				<div> <strong>---- Transformations ----</strong> </div><br>
+
+				<div>Position</div>
+				<div>X: -1<input id="inp_objX" type="range" min="-1" max="1" step="0.05" value="0" />1</div>
+				<div>Y: -1<input id="inp_objY" type="range" min="-1" max="1" step="0.05" value="0" />1</div><br>
+
+				<div>Scale</div>
+				<div>X: 0<input id="inp_obj_scaleX" type="range" min="0" max="2" step="0.05" value="1" />2</div>
+				<div>Y: 0<input id="inp_obj_scaleY" type="range" min="0" max="2" step="0.05" value="1" />2</div><br>
+
+				<div>Rotation</div>
+				<div>-180<input id="inp_rotation" type="range" min="-180" max="180" step="5.0" value="0" />180
+				</div>
+				<br>
+
+
+			</td>
+		</tr>
+	</table>
+	<div>
+</body>
+
+</html>
